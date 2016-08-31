@@ -17,6 +17,9 @@ const requestTemperature = (city) => ({ type: Types.TEMPERATURE_REQUEST, city })
 const receiveTemperature = (temperature) => ({ type: Types.TEMPERATURE_RECEIVE, temperature })
 const receiveTemperatureFailure = () => ({ type: Types.TEMPERATURE_FAILURE })
 
+const createTestState = (data) => ({type: Types.TESTSTATE_CREATE, data })
+const checkTestState = () => ({type: Types.TESTSTATE_CHECK })
+
 /**
  Makes available all the action creators we've created.
  */
@@ -28,5 +31,7 @@ export default {
   startup,
   requestTemperature,
   receiveTemperature,
-  receiveTemperatureFailure
+  receiveTemperatureFailure,
+  createTestState,
+  checkTestState
 }

@@ -6,9 +6,11 @@ import R from 'ramda'
 // process STARTUP actions
 export function * watchStartup () {
   yield take(Types.STARTUP)
-  const temp = yield select((state) => state.weather.temperature)
-  // only fetch new temps when we don't have one yet
-  if (!R.is(Number, temp)) {
-    yield put(Actions.requestTemperature('San Francisco'))
-  }
+  // const temp = yield select((state) => state.weather.temperature)
+  // // only fetch new temps when we don't have one yet
+  // if (!R.is(Number, temp)) {
+  //   yield put(Actions.requestTemperature('San Francisco'))
+  // }
+
+  yield put(Actions.createTestState({a: 'A', b: 'B', c: 'C'}))
 }
